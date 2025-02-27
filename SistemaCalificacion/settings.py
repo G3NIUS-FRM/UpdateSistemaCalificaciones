@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-h6r%3%xw5c&ij_0$v_ytglpb4=s479p1n3on0^+3%ipeo-45xn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['updatesistemacalificaciones.onrender.com', 'localhost']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -48,11 +47,10 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'SistemaCalificaciones.urls'
+ROOT_URLCONF = 'SistemaCalificacion.urls'
 
 TEMPLATES = [
     {
@@ -70,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'SistemaCalificaciones.wsgi.application'
+WSGI_APPLICATION = 'SistemaCalificacion.wsgi.application'
 
 
 # Database
@@ -119,14 +117,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Para collectstatic
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),  # Directorio global de estáticos
-]
-
-# Configuración para producción (agregar al final)
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
