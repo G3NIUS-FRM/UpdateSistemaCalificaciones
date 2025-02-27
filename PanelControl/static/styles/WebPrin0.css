@@ -1,0 +1,388 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+@media (max-width: 768px) {
+    body {
+        zoom: 0.5; /* Reduce la página al 90% */
+    }
+}
+
+/* 🟢 Barra de navegación */
+.NavBar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(164, 255, 80, 0.8);
+    height: 10vh;
+    padding: 0 20px;
+}
+
+.NavBar ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 0;
+}
+
+.NavBar ul li {
+    list-style: none;
+}
+
+.NavBar ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    transition: color 0.3s ease-in-out;
+}
+
+.NavBar ul li a:hover {
+    color: #007bff;
+}
+.div-titulo{
+    position: relative;
+    left: 10vh;
+    top: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 10vh;
+    background-color: rgba(230, 230, 230, 0.507);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.div-titulo h1{
+    font-size: 40px;
+
+}
+/* 🔵 Contenedor del formulario */
+.container-form {
+    position: relative;
+    left: 50vh;
+    background-color: rgba(201, 253, 152, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 📑 Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* 🔽 Selector */
+#curso {
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* 🎛 Botón */
+.select-curso {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background 0.3s ease-in-out;
+}
+
+.select-curso:hover {
+    background-color: #0056b3;
+}
+
+.select-curso:active {
+    transform: scale(0.98);
+}
+.tabla{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:  rgba(160, 253, 117, 0.555);
+    width: 40%;
+    height: 60vh;
+    max-height: 80vh;
+    position: relative;
+    top: 10vh;
+    left: 10vh;
+    box-shadow:0px 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    
+}
+table{
+
+    background-color: rgba(194, 194, 194, 0.555);
+    width: 90%;
+
+    max-height: 100%;
+    margin-top: 10px;
+    box-shadow:0px 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    border-collapse: separate;  /* Permite separación */
+    border-spacing: 10px;
+    overflow-y: scroll;
+
+
+}
+.tabla table {
+    overflow-y: auto;
+    display: block; /* Hace que el scroll se aplique correctamente */
+    max-height: 55vh; /* Para que no sobresalga del div */
+}
+th{
+    font-size: 30px;
+}
+td{
+    font-size: 20px;
+    border-right: 1px solid black;
+}
+th,td{
+    padding: 15px;
+}
+.quema{
+    color: red;
+}
+.edit,.add{
+    width: 20vh;
+    height: 50px;
+
+    border-radius: 10px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease-in-out;
+}
+.edit{
+    background-color: rgba(203, 255, 81, 0.548);
+}
+.add{
+    background-color: rgba(37, 255, 128, 0.733);
+}
+.edit:hover{
+    background-color: rgba(141, 177, 57, 0.548);
+}
+.add:hover{
+    background-color: rgba(24, 155, 78, 0.733);
+}
+.insert{
+    background-color: rgba(156, 255, 117, 0.877);
+    width: 30%;
+    height: 40%;
+    position: absolute;
+    top: 20vh;
+    right:  20vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+#nota{
+    gap: 20px;
+}
+#nota input{
+    width: 100px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 20px;
+    background-color: rgba(163, 163, 163, 0.336);
+}
+#nota button{
+    font-size: 15px;
+    height: 30px;
+    width: 100px;
+
+    border-radius: 10px;
+    background-color: rgba(37, 255, 128, 0.733);
+    transition: background 0.3s ease-in-out;
+}
+#nota button:hover{
+    background-color: rgba(28, 156, 81, 0.733);
+}
+.container{
+    height: 100vh;
+    margin:0;
+    width: 100%;
+}
+.agregar_apuntes{
+    width: 100%;
+    height: 10vh;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.agregar_apuntes button{
+    position: relative;
+    margin-left: auto;
+    font-size: 20px;
+    right: 15px;
+    width: 300px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: rgba(96, 155, 88, 0.563);
+    transition: background 0.3s ease-in-out;
+}
+.agregar_apuntes button:hover{
+    background-color: rgba(64, 101, 59, 0.563);
+}
+.agregar_apuntes h1{
+    position: relative;
+    left: 15px;
+    width: 300px;
+}
+
+@media (max-width: 768px) {
+    body {
+        zoom: 1; /* Eliminamos el zoom anterior */
+        overflow-x: hidden; /* Previene scroll horizontal */
+    }
+
+    /* Ajustes de NavBar */
+    .NavBar {
+        height: 8vh;
+        padding: 0 10px;
+    }
+
+    .NavBar ul li a {
+        font-size: 14px;
+    }
+
+    /* Ajustes título */
+    .div-titulo {
+        left: 5%;
+        top: 3vh;
+        width: 90%;
+        height: 8vh;
+    }
+
+    .div-titulo h1 {
+        font-size: 24px;
+    }
+
+    /* Contenedor formulario */
+    .container-form {
+        left: 0;
+        width: 90%;
+        margin: 30px auto;
+        padding: 15px;
+    }
+
+    /* Tabla */
+    .tabla {
+        left: 5%;
+        top: 5vh;
+        width: 90%;
+        height: auto;
+        min-height: 50vh;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .tabla table {
+        max-height: 50vh;
+    }
+
+    th {
+        font-size: 18px;
+    }
+
+    td {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    /* Contenedor insert */
+    .insert {
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        top: 0 !important;
+        width: 90% !important;
+        margin: 20px auto;
+        height: auto;
+        padding: 15px;
+    }
+
+    /* Botones */
+    .edit, .add {
+        width: 100%;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    /* Sección agregar apuntes */
+    .agregar_apuntes {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .agregar_apuntes button {
+        position: static;
+        width: 90%;
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    .agregar_apuntes h1 {
+        position: static;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    /* Ajustes generales */
+    #curso {
+        font-size: 14px;
+    }
+
+    .select-curso {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes adicionales para pantallas muy pequeñas */
+    .NavBar ul {
+        gap: 10px;
+    }
+
+    .div-titulo h1 {
+        font-size: 20px;
+    }
+
+    th {
+        font-size: 16px;
+    }
+
+    td {
+        font-size: 12px;
+    }
+}

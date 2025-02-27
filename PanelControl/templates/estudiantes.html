@@ -1,0 +1,84 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<div class="div-titulo">
+    <h1>Curso</h1>
+</div>
+<div>
+    <div class="tabla">
+        <table>
+            <thead>
+                <tr>
+
+                    <th>Estudiante</th>
+                    <th>Calificacion</th>
+                </tr>
+        
+            </thead>
+            <tbody>
+                {% for estudiante, calificacion in estudiantes_calificaciones %}
+        
+                <tr>
+
+                    <td>{{estudiante}}</td>
+                    {% if calificacion > 70 %}
+                    <td>{{calificacion}}</td>
+                    {% else %}
+                    <td class="quema">{{calificacion}}</td>
+                    {% endif %}
+                    {% if calificacion == 1 %}
+                        <td>
+                            <form method="post" action="{% url 'agregarNota' %}">
+                                {% csrf_token %}
+                               <input type="hidden" name="estudiante_id" value="{{ estudiante }}">
+                                <input type="hidden" name="calificacion_id" value="{{ calificacion }}">
+                                <button type="submit" id="{{estudiante.id}}" class="add">Agregar Nota</button>
+                            </form>
+                            
+                        </td>
+                    {% else %}
+                        <td>
+                            <form method="post" action="{% url 'editar_nota' %}">
+                                {% csrf_token %}
+                                <input type="hidden" name="estudiante_id" value="{{ estudiante }}">
+                                <input type="hidden" name="calificacion_id" value="{{ calificacion }}">
+                                <button type="submit"class="edit" id="{{estudiante.id}}">Editar Nota</button>
+                            </form>
+                        </td>
+                    {% endif %}
+                </tr>
+        
+        
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="insert">
+        {% if estudiante_en_proceso %}
+        <h2>
+            Estudiante {{estudiante_en_proceso}}
+        </h2>    
+        <form id="nota"method="post" action="{% url 'actualizar_panel' %}">
+            {% csrf_token %}
+            <input type="number" min="60" max="100" value="{{calificacion_en_proceso}}" name="newCali">
+            <button type="submit">Insertar</button>
+        </form>
+
+        {% else %}
+        <h2>
+            Estudiante
+        </h2>
+        <form id="nota"method= action="/">
+            {% csrf_token %}
+            <input type="number" min="60" max="100">
+            <button type="button">Insertar</button>
+        </form>
+        {% endif %}
+
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<div class="div-titulo">
+    <h1>Saludos maestr@ {{user}}</h1>
+</div>
+
+<form method="GET" action="{% url 'estudiantes_por_curso' %}">
+    <section>
+        <div class="container-form">
+            <select name="curso" id="curso">
+                {% for curso in Cursos %}
+                <option value="{{curso.id}}">{{curso}}</option>
+                {% endfor %}
+            </select>
+            <button type="submit" class="select-curso">Ver Curso</button>
+
+        </div>
+    </section>
+
+</form>
+
+{% endblock %}
