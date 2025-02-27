@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'SistemaCalificacion.urls'
+ROOT_URLCONF = 'SistemaCalificaciones.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'SistemaCalificacion.wsgi.application'
+WSGI_APPLICATION = 'SistemaCalificaciones.wsgi.application'
 
 
 # Database
